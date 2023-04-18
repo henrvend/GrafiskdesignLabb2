@@ -39,3 +39,7 @@ img {
     width: 7rem;
     height: 7rem;
 }
+.form{
+    border:1px solid black;
+    margin-bottom: 5px;
+}
