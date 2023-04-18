@@ -61,7 +61,11 @@ function bokaBord() {
         bord[i].addEventListener("click", () => {
             bord[i].classList.toggle("booked");
             if (bord[i].classList.contains("booked")) {
-                bord[i].textContent = ("X")
+                let div = document.createElement('div');
+                div.textContent="X"
+                //div.setAttribute('class', 'pt-0');
+                bord[i].appendChild(div);
+                //bord[i].textContent = ("X")
             } else bord[i].textContent = (id);
         });
     }
