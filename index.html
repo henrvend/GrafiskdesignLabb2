@@ -12,77 +12,80 @@
 </head>
 
 <body>
-    <div class="jumbotron text-center">
-        <h1>BordsBokning</h1>
-    </div>
-    <div class="row mx-4 mt-5">
-        <div class="col">
-            <h4 >Patio</h4>
-            <div class="table round" id="1">1</div>
-            <div class="table round" id="2">2</div>
-            <div class="table round" id="3">3</div>
-            <div class="table round" id="4">4</div>
-            <div class="table round" id="5">5</div>
-
+    <div>
+        <div class="jumbotron text-center">
+            <h1>BordsBokning</h1>
         </div>
+        <div class="row mx-4 mt-5">
+            <div class="col">
+                <h4>Patio</h4>
+                <div class="table round" id="1">1</div>
+                <div class="table round" id="2">2</div>
+                <div class="table round" id="3">3</div>
+                <div class="table round" id="4">4</div>
+                <div class="table round" id="5">5</div>
 
-        <div class="col">
-            <form>
-                <h3>Lägg till i kön</h3>
-                <div id="errorMsg"></div>
-                <div class="form-group">
-                    <label for="Namn" id="namnruta">Namn</label>
-                    <input type="text" class="form-control" id="namn" placeholder="Hela namnet">
-                </div>
-                <div class="form-group mt-2">
-                    <label for="mobilnummer">Telefon</label>
-                    <input type="number" class="form-control" id="mobilnummer" placeholder="070 123 45 60">
-                </div>
-                <div class="form-group mt-2">
-                    <label for="antal">AntalGäster:</label>
-                    <select id="antal" name="antal">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary mt-2" id="addButton">Lägg Till</button>
-            </form>
-            <div class="mt-3">
-                <ol id="koLista">
-                    <li class="mt-1">Cras justo odio 070 123 45 60</li>
-                    <li class="mt-1">Cras justo odio 070 123 45 60</li>
-                    <li class="mt-1">Cras justo odio 070 123 45 60</li>
-                    <li class="mt-1">Cras justo odio 070 123 45 60</li>
-                    <li class="mt-1">Cras justo odio 070 123 45 60</li>
-                </ol>
             </div>
 
+            <div class="col-md-6 col-sm-4">
+                <form>
+                    <h3>Lägg till i kön</h3>
+                    <div id="errorMsg"></div>
+                    <div class="form-group">
+                        <label for="Namn" id="namnruta">Namn</label>
+                        <input type="text" class="form-control" id="namn" placeholder="Hela namnet">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="mobilnummer">Telefon</label>
+                        <input type="number" class="form-control" id="mobilnummer" placeholder="070 123 45 60">
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="antal">AntalGäster:</label>
+                        <select id="antal" name="antal">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2" id="addButton">Lägg Till</button>
+                </form>
+                <div class="mt-3">
+                    <ol id="koLista">
+
+                    </ol>
+                </div>
+
+            </div>
+            <div class="col flex-column align-self-sm-end align-items-sm-end">
+                <div>
+                    <img src="floorplan.png" alt="planlösning" class="d-sm-none d-md-block">
+                </div>
+                <div class="col d-flex align-self-end align-items-end flex-column">
+                    <div class="table round" id="16">16</div>
+                    <div class="table round" id="15">15</div>
+                </div>
+            </div>
         </div>
-        <div class="col d-flex align-self-end align-items-end flex-column">
-            <div class="table round" id="16">16</div>
-            <div class="table round" id="15">15</div>
+        <div class="row mx-5 d-flex justify-content-between">
+            <div class="table round" id="6">6</div>
+            <div class="table small" id="11">11</div>
+            <div class="table small" id="12">12</div>
+            <div class="table round big" id="13">13</div>
+            <div class="table" id="14">14</div>
         </div>
+        <div class="row d-flex justify-content-end mx-4">
+            <div class="table mx-4" id="7">7</div>
+            <div class="table mx-4" id="8">8</div>
+            <div class="table mx-4" id="9">9</div>
+            <div class="table mx-4" id="10">10</div>
+        </div>
+        <div></div>
+        <div></div>
+        <script src="script.js"></script>
     </div>
-    <div class="row mx-5 d-flex justify-content-between">
-        <div class="table round" id="6">6</div>
-        <div class="table small" id="11">11</div>
-        <div class="table small" id="12">12</div>
-        <div class="table round big" id="13">13</div>
-        <div class="table" id="14">14</div>
-    </div>
-    <div class="row d-flex justify-content-end m-5">
-        <div class="table mx-4" id="7">7</div>
-        <div class="table mx-4" id="8">8</div>
-        <div class="table mx-4" id="9">9</div>
-        <div class="table mx-4" id="10">10</div>
-    </div>
-    <div></div>
-    <div></div>
-    <script src="script.js"></script>
 </body>
 
 </html>
