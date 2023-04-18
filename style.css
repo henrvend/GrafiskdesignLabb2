@@ -1,41 +1,42 @@
-*{box-sizing: border-box;}
-
-body{
-     max-width: 800px;   
-     margin:auto;
+* {
+    box-sizing: border-box;
 }
 
-img{
+body {
+    max-width: 800px;
+    margin: auto;
+}
+
+img {
     width: 200px;
     height: 300px;
 }
-.round{
+
+.round {
     border-radius: 50%;
 }
 
-.table{
+.table {
     background-color: aquamarine;
     width: 5rem;
     height: 5rem;
     text-align: center;
-    font-size:xx-large;
-    cursor:pointer;
-    
+    font-size: xx-large;
+    cursor: pointer;
+
 }
 
-.booked{
-    background-color: brown;
+.booked {
+    background-color: rgb(220, 97, 97);
 }
 
-.small{
+.small {
     width: 3rem;
     height: 3rem;
 
 }
 
-.big{
+.big {
     width: 7rem;
     height: 7rem;
 }
-
-

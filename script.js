@@ -16,7 +16,6 @@ function addToList() {
         let errorMsg = document.querySelector("#errorMsg");
         let listLength = document.querySelectorAll("li");
         let lista = document.querySelector('#koLista');
-        console.log(listLength.length);
         try {
             if (name.length < 5) {
                 throw { error: name, message: "Måste fylla i namn." }
@@ -38,11 +37,12 @@ function addToList() {
             liRef.append(document.querySelector("#antal").value);
             liRef.append(remBtn);
             lista.appendChild(liRef);
+            document.querySelector("#mobilnummer").value = '';
+            document.querySelector('#namn').value = '';
 
         } catch (error) {
             errorMsg.style.border = "solid red 1px";
             errorMsg.textContent = error.message;
-            console.log(error.message);
         }
 
         remBtn.addEventListener("click", () => {
@@ -51,7 +51,6 @@ function addToList() {
             errorMsg.style.border = "";
         })
     });
-
 }
 
 function bokaBord() {
@@ -61,9 +60,9 @@ function bokaBord() {
         let id = bord[i].id;
         bord[i].addEventListener("click", () => {
             bord[i].classList.toggle("booked");
-            if(bord[i].classList.contains("booked")){
-                bord[i].textContent=("X")
-            }else bord[i].textContent=(id);
+            if (bord[i].classList.contains("booked")) {
+                bord[i].textContent = ("X")
+            } else bord[i].textContent = (id);
         });
     }
 }
