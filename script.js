@@ -3,6 +3,7 @@
 window.addEventListener('load', () => {
     bokaBord();
     addToList();
+    seatsAtTable();
 });
 
 function addToList() {
@@ -29,12 +30,12 @@ function addToList() {
             }
             errorMsg.style.border = "";
             errorMsg.textContent = "";
-            remBtn.setAttribute("class", "btn btn-danger mt-1");
+            remBtn.setAttribute("class", "btn btn-danger px-2 py-0");
             remBtn.append("-");
             liRef.appendChild(name);
             liRef.append(", tel: ");
             liRef.appendChild(number);
-            liRef.append(": antal: ");
+            liRef.append(", antal: ");
             liRef.append(document.querySelector("#antal").value);
             liRef.append(remBtn);
             lista.appendChild(liRef);
@@ -61,12 +62,48 @@ function bokaBord() {
         bord[i].addEventListener("click", () => {
             bord[i].classList.toggle("booked");
             if (bord[i].classList.contains("booked")) {
-                let div = document.createElement('div');
+                let div = bord[i].querySelector('.table div')
                 div.textContent="X"
-                //div.setAttribute('class', 'pt-0');
                 bord[i].appendChild(div);
-                //bord[i].textContent = ("X")
-            } else bord[i].textContent = (id);
+            } else{
+                bord[i].textContent = (id);
+                let div = bord[i].querySelector('.table div')
+                if(bord[i].classList.contains('small')){
+                    div.textContent=('2');
+                    bord[i].appendChild(div);
+                }  
+               if(bord[i].classList.contains('big')){
+                    div.textContent=('6');
+                    bord[i].appendChild(div);
+                } 
+                if(bord[i].classList.contains('medium')){
+                    div.textContent=('4');
+                    bord[i].appendChild(div);
+                } 
+            } 
+            
         });
+    }
+}
+
+function seatsAtTable() {
+    let bord = document.querySelectorAll(".table");
+    
+
+    for(let i = 0; i<bord.length; i++){
+        let div = document.createElement('div');
+        if(bord[i].classList.contains('small')){
+            div.textContent=('2');
+            bord[i].appendChild(div);
+        }  
+       if(bord[i].classList.contains('big')){
+            div.textContent=('6');
+            bord[i].appendChild(div);
+        } 
+        if(bord[i].classList.contains('medium')){
+            div.textContent=('4');
+            bord[i].appendChild(div);
+        }   
+
     }
 }
