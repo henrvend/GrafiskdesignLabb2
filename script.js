@@ -66,7 +66,6 @@ function bokaBord() {
                 div.textContent="X"
                 bord[i].appendChild(div);
             } else{
-                bord[i].textContent = (id);
                 let div = bord[i].querySelector('.table div')
                 if(bord[i].classList.contains('small')){
                     div.textContent=('2');
@@ -79,9 +78,8 @@ function bokaBord() {
                 if(bord[i].classList.contains('medium')){
                     div.textContent=('4');
                     bord[i].appendChild(div);
-                } 
-            } 
-            
+                }   
+            }
         });
     }
 }
