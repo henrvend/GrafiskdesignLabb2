@@ -26,14 +26,18 @@ img {
 
 }
 
-.table:hover{
+/*.table:hover{
     background-color: rgb(47, 202, 150);
 }
 .booked:hover{
     background-color: rgb(189, 38, 38);   
+}*/
+
+.divW{
+    width:70px;
 }
 .booked {
-    background-color: rgb(220, 97, 97);
+    background-color: rgb(220, 60, 60);
 }
 
 .small {

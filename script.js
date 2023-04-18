@@ -18,11 +18,12 @@ function addToList() {
         let errorMsg = document.querySelector("#errorMsg");
         let listLength = document.querySelectorAll("li");
         let lista = document.querySelector('#koLista');
+        console.log(number);
         try {
             if (name.length < 5) {
                 throw { error: name, message: "Måste fylla i namn." }
             }
-            if (number.length < 5) {
+            if (number.length < 5 ) {
                 throw { error: number, message: "Måste fylla i telefonnummer. Bara siffror." }
             }
             if (listLength.length > 4) {
@@ -30,12 +31,13 @@ function addToList() {
             }
             errorMsg.style.border = "";
             errorMsg.textContent = "";
-            remBtn.setAttribute("class", "btn btn-danger px-2 py-0");
+            remBtn.setAttribute("class", "btn btn-danger py-0 px-3");
             remBtn.append("-");
+            liRef.setAttribute('class', 'd-flex justify-content-between m-1')
             liRef.appendChild(name);
             liRef.append(", tel: ");
             liRef.appendChild(number);
-            liRef.append(", antal: ");
+            liRef.append(", antal:   ");
             liRef.append(document.querySelector("#antal").value);
             liRef.append(remBtn);
             lista.appendChild(liRef);
@@ -48,10 +50,29 @@ function addToList() {
         }
 
         remBtn.addEventListener("click", () => {
-            liRef.remove();
-            errorMsg.textContent = "";
-            errorMsg.style.border = "";
-        })
+            if(remBtn.firstChild){
+            let conf = document.createElement('button');
+            conf.textContent='Tillbaka';
+            let confRem = document.createElement('button');
+            confRem.textContent='Ta bort'
+            let remDiv = document.createElement('div');
+            conf.setAttribute('class', 'float-end divW');
+            confRem.setAttribute('class', 'float-end divW');
+            remDiv.setAttribute('class', 'divW');
+            remDiv.appendChild(conf);
+            remDiv.appendChild(confRem);
+            liRef.appendChild(remDiv);
+            confRem.addEventListener('click', ()=>{
+                liRef.remove();
+                errorMsg.textContent = "";
+                errorMsg.style.border = "";
+            });
+            conf.addEventListener('click', ()=>{
+                remDiv.remove();
+                
+            })
+            }
+        });
     });
 }
 
