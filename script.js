@@ -1,7 +1,8 @@
 'use strict';
 
 window.addEventListener('load', () => {
-
+    bokaBord();
+    addToList();
 });
 
 function addToList() {
@@ -55,7 +56,6 @@ function addToList() {
 
 function bokaBord() {
     let bord = document.querySelectorAll(".table");
-    console.log(bord.length);
     for (let i = 0; i < bord.length; i++) {
         let id = bord[i].id;
         bord[i].addEventListener("click", () => {
@@ -66,6 +66,3 @@ function bokaBord() {
         });
     }
 }
-
-bokaBord();
-addToList();
