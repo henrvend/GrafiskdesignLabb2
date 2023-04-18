@@ -22,7 +22,7 @@ function addToList() {
                 throw { error: name, message: "Måste fylla i namn." }
             }
             if (number.length < 5) {
-                throw { error: number, message: "Måste fylla i telefonnummer." }
+                throw { error: number, message: "Måste fylla i telefonnummer. Bara siffror." }
             }
             if (listLength.length > 4) {
                 throw { error: name, message: "För lång väntetid, be dem återkomma." }
@@ -32,7 +32,7 @@ function addToList() {
             remBtn.setAttribute("class", "btn btn-danger mt-1");
             remBtn.append("-");
             liRef.appendChild(name);
-            liRef.append(": nr: ");
+            liRef.append(", tel: ");
             liRef.appendChild(number);
             liRef.append(": antal: ");
             liRef.append(document.querySelector("#antal").value);
