@@ -18,7 +18,6 @@ function addToList() {
         let errorMsg = document.querySelector("#errorMsg");
         let listLength = document.querySelectorAll("li");
         let lista = document.querySelector('#koLista');
-        console.log(number);
         try {
             if (name.length < 5) {
                 throw { error: name, message: "Måste fylla i namn." }
@@ -50,15 +49,15 @@ function addToList() {
         }
 
         remBtn.addEventListener("click", () => {
-            if(remBtn.firstChild){
+            remBtn.setAttribute('class', 'd-none');
             let conf = document.createElement('button');
-            conf.textContent='Tillbaka';
+            conf.textContent='Behåll';
             let confRem = document.createElement('button');
             confRem.textContent='Ta bort'
             let remDiv = document.createElement('div');
-            conf.setAttribute('class', 'float-end divW');
-            confRem.setAttribute('class', 'float-end divW');
-            remDiv.setAttribute('class', 'divW');
+            conf.setAttribute('class', 'float-end divW btn btn-primary p-0 mb-1');
+            confRem.setAttribute('class', 'float-end divW btn btn-danger p-0');
+            remDiv.setAttribute('class', 'divW mx-1');
             remDiv.appendChild(conf);
             remDiv.appendChild(confRem);
             liRef.appendChild(remDiv);
@@ -69,9 +68,10 @@ function addToList() {
             });
             conf.addEventListener('click', ()=>{
                 remDiv.remove();
+                remBtn.setAttribute('class', 'd-block btn btn-danger py-0 px-3');
                 
             })
-            }
+            
         });
     });
 }
